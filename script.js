@@ -39,7 +39,7 @@ yanitAl.then((uzaydakiler) => {
 
     // h2 elementi oluşturuldu ve jsonName değişkenine aktarıldı.
     let jsonName = document.createElement("h2");
-    // oluşturulan h2 elementinin class'ı jsonCraft olarak eklendi.
+    // oluşturulan h2 elementinin class'ı jsonName olarak eklendi.
     jsonName.classList.add("jsonName");
     // jsonName değişkeninin içeriği json dosyasından alınan verilerle güncellendi.
     jsonName.textContent = uzaydakiler.people[i].name;
