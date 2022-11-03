@@ -1,4 +1,4 @@
-// jsonBaglantiAdresi değişkeni oluşturulup fetch işlemi için ilgili api linki eklendi.
+// jsonBaglantiAdresi değişkeni oluşturulup fetch metodu için ilgili api linki eklendi.
 let JsonBaglantiAdresi = fetch("http://api.open-notify.org/astros.json");
 // yanitAl değişkeni oluşturuldu ve js objesine dönüştürme işlemi başlatıldı.
 let yanitAl = JsonBaglantiAdresi.then((yanit) => yanit.json());
@@ -41,6 +41,8 @@ yanitAl.then((uzaydakiler) => {
     let jsonName = document.createElement("h2");
     // oluşturulan h2 elementinin class'ı jsonCraft olarak eklendi.
     jsonName.classList.add("jsonName");
+    // jsonName değişkeninin içeriği json dosyasından alınan verilerle güncellendi.
+    jsonName.textContent = uzaydakiler.people[i].name;
     // jsonName değişkeni root div'inin (rootEleman değişkeni) appendChild'ı olarak atandı.
     rootEleman.appendChild(jsonName);
 
@@ -48,12 +50,9 @@ yanitAl.then((uzaydakiler) => {
     let jsonCraft = document.createElement("h4");
     //oluşturulan h4 elementinin class'ı jsonCraft olarak eklendi.
     jsonCraft.classList.add("jsonCraft");
-    // jsonCraft değişkeni rootEleman değişkeninin appendChild'ı olarak güncellendi.
-    rootEleman.appendChild(jsonCraft);
-
-    // jsonName değişkeninin içeriği json dosyasından alınan verilerle güncellendi.
-    jsonName.textContent = uzaydakiler.people[i].name;
     // jsonCraft değişkeninin içeriği json dosyasından alınan verilerle güncellendi.
     jsonCraft.textContent = "Bulunduğu istasyon:" + uzaydakiler.people[i].craft;
+    // jsonCraft değişkeni değişkeni root div'inin (rootEleman değişkeni) appendChild'ı olarak atandı.
+    rootEleman.appendChild(jsonCraft);
   }
 });
